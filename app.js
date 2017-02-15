@@ -76,4 +76,7 @@ var api = (function(){
 
 $(function(){
   api.addCharacter('Ysera', 'Pelì');
+  api.addCharacter('Ysera', 'Tufie');
+  api.addCharacter('Ysera', 'Nazuki');
+  api.addCharacter('Ysera', 'Skewered');
 });
