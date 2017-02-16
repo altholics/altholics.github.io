@@ -54,21 +54,43 @@ var api = (function(){
         prof = json.professions.primary[0].name;
         break;
       }
-      else if (json.professions.primary[1].id == data.professions[p]){
+    }
+    var done = prof_quests.every(function(q){
+      return json.quests.indexOf(q) >= 0;
+    });
+    $('table tbody tr[data-id="profession0"]')
+    .append('<td class=' + (
+      done ?
+      'complete">Done' :
+      'incomplete">In Progress'
+    ) + '</td>');
+
+    for (var p in data.professions){
+      if (json.professions.primary[1].id == data.professions[p]){
         prof_quests = data.prof_quests[p];
         prof = json.professions.primary[1].name;
         break;
       }
     }
-    var done = prof_quests.every(function(q){
+    done = prof_quests.filter(function(q){
       return json.quests.indexOf(q) >= 0;
     });
-    $('table tbody tr[data-id="profession"]')
+    $('table tbody tr[data-id="profession1"]')
     .append('<td class=' + (
-      done ?
+      done == prof_quests.length ?
       'complete">Done' :
-      'incomplete">In Progress'
-    ) + '</td>')
+      'incomplete">' + done.length + '/' + prof_quests.length
+    ) + '</td>');
+
+    done = data.balance_of_power.filter(function(q){
+      return json.quests.indexOf(q) >= 0;
+    });
+    $('table tbody tr[data-id="bop"]')
+    .append('<td class=' + (
+      done == data.balance_of_power.length ?
+      'complete">Done' :
+      'incomplete">' + done.length + '/' + data.balance_of_power.length
+    ) + '</td>');
   };
 
   return new api();
