@@ -1,4 +1,4 @@
-define([], function(){
+define(['jquery'], function($){
   'use strict';
 
   var uri = 'https://us.api.battle.net/wow/';

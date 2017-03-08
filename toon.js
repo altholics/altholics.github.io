@@ -1,4 +1,4 @@
-define(['api', 'data', 'quest-chain'], function(Api, Data, QuestChain){
+define(['lil-event', 'api', 'data', 'quest-chain'], function(lil, Api, Data, QuestChain){
   'use strict';
 
   var ACHIEVS = ['loremaster', 'azsuna', 'valshara', 'highmountain', 'stormheim', 'suramar', 'insurrection'];
@@ -9,8 +9,11 @@ define(['api', 'data', 'quest-chain'], function(Api, Data, QuestChain){
     this.name = name;
   };
 
+  Toon.prototype = Object.create(lil.Event.prototype);
+
   Toon.prototype.fetch = function(){
     Api.get(['character', this.realm, this.name], ['fields=achievements,professions,progression,quests,reputation'], this.handleResponse);
+    return this;
   };
 
   Toon.prototype.handleResponse = function(json){
@@ -39,6 +42,8 @@ define(['api', 'data', 'quest-chain'], function(Api, Data, QuestChain){
 
     this.appearances = {};
     this.appearances.balance_of_power = new QuestChain(Data.balance_of_power, json.quests);
+
+    this.emit('change');
   };
 
   Toon.prototype.toJSON = function(){
@@ -46,5 +51,7 @@ define(['api', 'data', 'quest-chain'], function(Api, Data, QuestChain){
 
     return json;
   };
+
+  return Toon;
 
 });

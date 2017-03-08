@@ -1,0 +1,19 @@
+{
+  "public": false,
+  "name": "altoholics.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altoholics/altoholics.github.io.git"
+  },
+  "author": "nazuraki <nazuraki@gmail.com>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/altoholics/altoholics.github.io/issues"
+  },
+  "homepage": "https://github.com/altoholics/altoholics.github.io#readme"
+}
