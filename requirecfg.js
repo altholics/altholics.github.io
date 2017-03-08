@@ -13,4 +13,4 @@ requirejs.config({
   }
 });
 
-requirejs(["app"], function(App){ new App(); });
+requirejs(["app"], function(App){ window.app = new App(); });

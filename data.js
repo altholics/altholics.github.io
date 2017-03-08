@@ -29,7 +29,8 @@ define([], function(){
       inscription: 773,
       herbalism: 182,
       mining: 186,
-      skinning: 393
+      skinning: 393,
+      enchanting: 333
     },
     prof_quests: {
       herbalism: [

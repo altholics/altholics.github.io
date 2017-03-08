@@ -1,3 +1,11 @@
+#overview .container {
+  max-width: none;
+}
+
+#overview .container .row .column:first-child{
+  min-width: 285px;
+}
+
 footer {
   position: fixed;
   left: 0;
