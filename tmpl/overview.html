@@ -1,25 +1,43 @@
-<div id="overview">
-  <h2>Character Progression</h2>
-  <div class="container">
-    <div class="row">
+<h2>Character Progression</h2>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <dl>
+        <dt>Story</dt>
+        <dd data-id="achiev.loremaster">Loremaster</dd>
+        <dd data-id="achiev.azsuna">Azsuna Matata</dd>
+        <dd data-id="achiev.valshara">That's Val'shara Folks</dd>
+        <dd data-id="achiev.highmountain">Ain't No Mountain High Enough</dd>
+        <dd data-id="achiev.stormheim">Stormheim</dd>
+        <dd data-id="achiev.suramar">Good Suramaritan</dd>
+
+        <dt data-id="unlock.arccos">Unlock CoS/Arcway</dt>
+        <dt data-id="unlock.karazhan">Unlock Karazhan</dt>
+        <dt data-id="achiev.insurrection">Insurrection</dt>
+        <dt data-id="profession0">Profession (Primary)</dt>
+        <dt data-id="profession1">Profession (Secondary)</dt>
+        <dt data-id="bop">Balance of Power</dt>
+      </dl>
+    </div>
+    {{#each toons}}
       <div class="column">
         <dl>
-          <dt>Story</dt>
-          <dd data-id="achiev.loremaster">Loremaster</dd>
-          <dd data-id="achiev.azsuna">Azsuna Matata</dd>
-          <dd data-id="achiev.valshara">That's Val'shara Folks</dd>
-          <dd data-id="achiev.highmountain">Ain't No Mountain High Enough</dd>
-          <dd data-id="achiev.stormheim">Stormheim</dd>
-          <dd data-id="achiev.suramar">Good Suramaritan</dd>
+          <dt>{{name}}-{{realm}}</dt>
+          <dt>{{#if achievs.loremaster}}Complete{{else}}In Progress{{/if}}</dd>
+          <dt>{{#if achievs.azsuna}}Complete{{else}}In Progress{{/if}}</dd>
+          <dt>{{#if achievs.valshara}}Complete{{else}}In Progress{{/if}}</dd>
+          <dt>{{#if achievs.highmountain}}Complete{{else}}In Progress{{/if}}</dd>
+          <dt>{{#if achievs.stormheim}}Complete{{else}}In Progress{{/if}}</dd>
+          <dt>{{#if achievs.suramar}}Complete{{else}}In Progress{{/if}}</dd>
 
-          <dt data-id="unlock.arccos">Unlock CoS/Arcway</dt>
-          <dt data-id="unlock.karazhan">Unlock Karazhan</dt>
-          <dt data-id="achiev.insurrection">Insurrection</dt>
-          <dt data-id="profession0">Profession (Primary)</dt>
-          <dt data-id="profession1">Profession (Secondary)</dt>
-          <dt data-id="bop">Balance of Power</dt>
+          <dt>{{#if unlocks.arccos}}Complete{{else}}In Progress{{/if}}</dt>
+          <dt>{{#if unlocks.karazhan}}Complete{{else}}In Progress{{/if}}</dt>
+          <dt>{{#if achievs.insurrection}}Complete{{else}}In Progress{{/if}}</dt>
+          <dt>{{prof1}}</dt>
+          <dt>{{prof2}}</dt>
+          <dt>{{#if artifact.balance_of_power}}Complete{{else}}In Progress{{/if}}</dt>
         </dl>
       </div>
-    </div>
+    {{/each}}
   </div>
 </div>
