@@ -15,9 +15,7 @@ define(['lil-event', 'api', 'data', 'quest-chain'], function(lil, Api, Data, Que
       realm: this.realm,
       achievs: this.achievs,
       unlocks: this.unlocks,
-      artifact: this.appearances,
-      prof1: null,
-      prof2: null
+      artifact: this.appearances
     };
 
     this.handleResponse = this.handleResponse.bind(this);
@@ -43,12 +41,16 @@ define(['lil-event', 'api', 'data', 'quest-chain'], function(lil, Api, Data, Que
 
     for (var p in Data.professions){
       if (json.professions.primary[0].id == Data.professions[p]){
-        this.data.prof1 = json.professions.primary[0].name;
-        this.prof1_quests = new QuestChain(Data.prof_quests[p], json.quests);
+        this.data.prof1 = {
+          name: json.professions.primary[0].name,
+          quests: new QuestChain(Data.prof_quests[p], json.quests)
+        };
       }
       else if (json.professions.primary[1].id == Data.professions[p]){
-        this.data.prof2 = json.professions.primary[1].name;
-        this.prof2_quests = new QuestChain(Data.prof_quests[p], json.quests);
+        this.data.prof2 = {
+          name: json.professions.primary[1].name,
+          quests: new QuestChain(Data.prof_quests[p], json.quests)
+        };
       }
     }
 

@@ -19,7 +19,7 @@
         <dt data-id="bop">Balance of Power</dt>
       </dl>
     </div>
-    {{#each toons}}
+    {{#toons}}
       <div class="column">
         <dl>
           <dt>{{name}}-{{realm}}</dt>
@@ -33,11 +33,35 @@
           {{#if unlocks.arccos}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
           {{#if unlocks.karazhan}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
           {{#if achievs.insurrection}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
-          <dt>{{prof1}}</dt>
-          <dt>{{prof2}}</dt>
-          {{#if artifact.balance_of_power.done}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">{{artifact.balance_of_power.percent}}%</dt>{{/if}}
+          {{#if prof1}}
+            {{#with prof1}}
+              {{#if quests.done}}
+                <dt class="complete">{{name}}</dt>
+              {{else}}
+                <dt class="incomplete {{#if quests.almost}}almost{{/if}}">
+                  <span style="width:{{quests.percent}}%">{{name}} <em>{{quests.percent}}%</em></span>
+                </dt>
+              {{/if}}
+            {{/with}}
+          {{else}}
+            <dt>&nbpp;</dt>
+          {{/if}}
+          {{#if prof2}}
+            {{#with prof2}}
+              {{#if quests.done}}
+                <dt class="complete">{{name}}</dt>
+              {{else}}
+                <dt class="incomplete {{#if quests.almost}}almost{{/if}}">
+                  <span style="width:{{quests.percent}}%">{{name}} <em>{{quests.percent}}%</em></span>
+                </dt>
+              {{/if}}
+            {{/with}}
+          {{else}}
+            <dt>&nbpp;</dt>
+          {{/if}}
+          {{#if artifact.balance_of_power.done}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete"><span style="width:{{artifact.balance_of_power.percent}}%">&nbsp;<em>{{artifact.balance_of_power.percent}}%</em></span></dt>{{/if}}
         </dl>
       </div>
-    {{/each}}
+    {{/toons}}
   </div>
 </div>
