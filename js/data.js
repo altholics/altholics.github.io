@@ -3,15 +3,15 @@ define([], function(){
 
   return {
     achievements: {
-      loremaster: 11157,
-      azsuna: 10763,
-      valshara: 10698,
+      loremaster: 11157, // account-wide, all toons will have
+      azsuna: 10763, // [31300, 31301, 31302, 31303],
+      valshara: 10698, // [30633, 30634, 30635, 30636, 30632, 30631],
       highmountain: 10059,
       stormheim: 10790,
       suramar: 11124,
       insurrection: 11340,
-      this_side_up: 10602,
-      unleashed_monstrosities: 11160
+      this_side_up: 10602, // only need 8
+      unleashed_monstrosities: 11160 // only need 8
     },
     quests: {
       arccos: 43318,
@@ -33,6 +33,7 @@ define([], function(){
       enchanting: 333
     },
     prof_quests: {
+      enchanting: [],
       herbalism: [
         40014, 40016, 40017, 40019, 40021, 40023, 40041, 40042, 40031, 40033,
         40026, 40028, 40035, 40037, 40039

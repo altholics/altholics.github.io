@@ -1,4 +1,4 @@
-define(['lil-event', 'template7'], function(lil, T7){
+define(['jquery', 'lil-event', 'template7'], function($, lil, T7){
   'use strict';
 
   function Overview(){

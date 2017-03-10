@@ -1,9 +1,27 @@
 #overview .container {
   max-width: none;
 }
-
 #overview .container .row .column:first-child{
   min-width: 285px;
+}
+#overview .container .row .column {
+  padding: 0;
+}
+
+dt,dd {
+  min-height: 1.56em;
+  margin: 0;
+  padding: 3px 5px;
+  border-bottom: 1px solid #d3d3d3;
+}
+dd {
+  padding-left: 15px;
+}
+dt.complete {
+  background-color: #98fb98;
+}
+dt.incomplete {
+  background-color: #fafad2;
 }
 
 footer {

@@ -22,12 +22,12 @@ define(['toon', 'views/Overview'], function(Toon, View){
   };
 
   App.prototype.loaded = function(){
-    if (++this._fetched === this._toons.length){
+    if (++this._fetched != this._toons.length){
       return;
     }
 
     View.render({
-      toons: this._toons
+      toons: this._toons.map(function(t){ return t.toJSON(); })
     });
   };
 

@@ -23,19 +23,19 @@
       <div class="column">
         <dl>
           <dt>{{name}}-{{realm}}</dt>
-          <dt>{{#if achievs.loremaster}}Complete{{else}}In Progress{{/if}}</dd>
-          <dt>{{#if achievs.azsuna}}Complete{{else}}In Progress{{/if}}</dd>
-          <dt>{{#if achievs.valshara}}Complete{{else}}In Progress{{/if}}</dd>
-          <dt>{{#if achievs.highmountain}}Complete{{else}}In Progress{{/if}}</dd>
-          <dt>{{#if achievs.stormheim}}Complete{{else}}In Progress{{/if}}</dd>
-          <dt>{{#if achievs.suramar}}Complete{{else}}In Progress{{/if}}</dd>
+          {{#if achievs.loremaster}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if achievs.azsuna}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if achievs.valshara}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if achievs.highmountain}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if achievs.stormheim}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if achievs.suramar}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
 
-          <dt>{{#if unlocks.arccos}}Complete{{else}}In Progress{{/if}}</dt>
-          <dt>{{#if unlocks.karazhan}}Complete{{else}}In Progress{{/if}}</dt>
-          <dt>{{#if achievs.insurrection}}Complete{{else}}In Progress{{/if}}</dt>
+          {{#if unlocks.arccos}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if unlocks.karazhan}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
+          {{#if achievs.insurrection}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">In Progress</dt>{{/if}}
           <dt>{{prof1}}</dt>
           <dt>{{prof2}}</dt>
-          <dt>{{#if artifact.balance_of_power}}Complete{{else}}In Progress{{/if}}</dt>
+          {{#if artifact.balance_of_power.done}}<dt class="complete">Complete</dt>{{else}}<dt class="incomplete">{{artifact.balance_of_power.percent}}%</dt>{{/if}}
         </dl>
       </div>
     {{/each}}
